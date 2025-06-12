@@ -1,52 +1,44 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recherche Films et Séries</title>
+    <title>Movie finder</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>🎬 Recherche Films & Séries 📺</h1>
-        <p class="subtitle">Tapez le nom d'un film ou d'une série et découvrez son affiche !</p>
+        <h1>🎬 Search movie or TV series 📺</h1>
+        <p class="subtitle">Enter any movie or TV series...</p>
         
-        <div class="instructions">
-            <strong>Comment ça marche :</strong><br>
-            1. Tapez le nom du film ou de la série dans la case ci-dessous<br>
-            2. Cliquez sur "Rechercher"<br>
-            3. Regardez les résultats avec les affiches !
-            <div class="example">
-                Exemples : "Avengers", "Stranger Things", "Titanic", "Game of Thrones"
-            </div>
         </div>
 
         <div class="search-box">
             <div class="input-group">
-                <label for="searchInput">Nom du film ou de la série :</label>
+                <label for="searchInput">Name of the movie or serie :</label>
                 <input 
                     type="text" 
                     id="searchInput" 
-                    placeholder="Exemple : Avengers, Stranger Things, Titanic..."
+                    placeholder="Example : Avatar, Squid Game, ..."
                     onkeypress="handleEnter(event)"
                 />
             </div>
             <button onclick="searchMovies()" id="searchBtn">
-                🔍 Rechercher
+                🔍 Search
             </button>
         </div>
 
         <div id="loading" class="loading">
             <div class="spinner"></div>
-            <p>Recherche en cours...</p>
+            <p>Research in progress...</p>
         </div>
 
         <div id="error" class="error" style="display: none;"></div>
         <div id="noResults" class="no-results" style="display: none;"></div>
 
         <div id="results" class="results">
-            <h2>Résultats trouvés :</h2>
+            <h2>Results found :</h2>
             <div id="movieGrid" class="movie-grid"></div>
         </div>
     </div>
